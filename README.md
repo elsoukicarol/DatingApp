@@ -10,7 +10,7 @@ sign-up form, and a seamless online chatting platform.
 - [Getting Started](#getting-started)
 - [Installation](#installation)
 - [Configuration](#configuration)
-- [Usage](#usage)
+- [API Endpoints](#API)
 
 ## Getting Started
 
@@ -53,26 +53,89 @@ To get started with the project follow these steps:
   change the dialect in the /database/config.sequelize.js file according to your 
   predefined dialect.
 
-  ## Usage
+  ## API
 
- Some methods that shape the backend of this project are:
+ This dating app exposes the following API endpoints for interaction:
 
-  * SignUp: gets the user's personal information, checks if it's a new user and
-     register it in the database.
+  * `/api/user/signUp`
+     * Method: POST <br>
+     * Description: Creates a new user <br>
+     * Parameters: <br>
+           `first name`: user's first name <br>
+           `last name`: user's last name <br>
+           `dob`: user's date of birth <br>
+           `email`: user's email <br>
+           `username`: user's username <br>
+           `password`: user's password <br>
+           `gender`: user's gender <br>
+           `bio`: user's information (optional) <br>
+           `preference`: user's preferred gender <br>
+           `profile picture`: user's photo (optional) <br>
+       * Response: <br>
+           `message`: succesful or unsuccesful registration <br>
 
-  * SignIn: validates credentials and welcomes the user to the website.
+  * `/api/user/login`
+     * Method: POST <br>
+     * Description: Logins user into the website <br>
+     * Parameters: <br>
+           `username`: user's username <br>
+           `password`: user's password <br>
+       * Response: <br>
+           `message`: welcomes user to website <br>
 
-  * UpdateUser: allows the user to make some updates to his profile (first name,
-    last name, bio, profile picture, etc.).
+  * `/api/user/updateUser/:userId`
+     * Method: POST <br>
+     * Description: Logins user into the website <br>
+     * Parameters: <br>
+           `user_id`: user's id <br>
+           `fields`: desired fields to update with their
+           respective information <br>
+       * Response: <br>
+           `message`: succesful or unsuccesful update <br>
 
-  * DeleteUser: deletes the account of a user on the website
+  * `/api/user/deleteUser/:userId`
+     * Method: DELETE <br>
+     * Description: Deletes user account <br>
+     * Parameters: <br>
+           `user_id`: user's id <br>
+           `password`: user's password <br>
+       * Response: <br>
+           `message`: successful or unsuccessful deletion <br>
 
-  * GetUserByUsername: allows users to find people according to their username
+  * `/api/getUser/:userId`
+     * Method: GET <br>
+     * Description: Gets users by username <br>
+     * Parameters: <br>
+           `user_id`: current user's id <br>
+           `username`: requested user username <br>
+       * Response:
+           `message`: user <br>
 
-  * CreateMatch: generates matches between users and checks if both users match.
+  * `/api/match/newMatch`
+     * Method: POST <br>
+     * Description: Creates and checks if there is an
+       existing match <br>
+     * Parameters: <br>
+           `user_requester_id`: current user's id <br>
+           ``user_receiver_id``: matched user <br>
+       * Response: <br>
+           `message`: successful or unsuccessful match creation <br>
 
-  * DeleteMatch: deletes match between two users
+   * `/api/match/deleteMatch`
+     * Method: DELETE <br>
+     * Description: Creates and checks if there is an
+       existing match and deletes it <br>
+     * Parameters: <br>
+           `userid_first`: user's id <br>
+           `userid_second`: user's id <br>
+       * Response: <br>
+           `message`: successful or unsuccessful match deletion <br>
 
-  * CreateMessage: sends message between two users
-
-  * GetConversation: returns the entire conversation between two users
+  * `api/messages/getChat`
+     * Method: GET <br>
+     * Description: Gets complete conversation between two users <br>
+     * Parameters: <br>
+         `sender_id`: sender id <br>
+         `receiver_id`: receiver id <br>
+     * Response: <br>
+         `message`: chat between users <br>
