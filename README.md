@@ -61,81 +61,81 @@ To get started with the project follow these steps:
      * Method: POST <br>
      * Description: Creates a new user <br>
      * Parameters: <br>
-           `first name`: user's first name <br>
-           `last name`: user's last name <br>
-           `dob`: user's date of birth <br>
-           `email`: user's email <br>
-           `username`: user's username <br>
-           `password`: user's password <br>
-           `gender`: user's gender <br>
-           `bio`: user's information (optional) <br>
-           `preference`: user's preferred gender <br>
-           `profile picture`: user's photo (optional) <br>
+           &nbsp;&nbsp;`first name`: user's first name <br>
+           &nbsp;&nbsp;`last name`: user's last name <br>
+           &nbsp;&nbsp;`dob`: user's date of birth <br>
+           &nbsp;&nbsp;`email`: user's email <br>
+           &nbsp;&nbsp;`username`: user's username <br>
+           &nbsp;&nbsp;`password`: user's password <br>
+           &nbsp;&nbsp;`gender`: user's gender <br>
+           &nbsp;&nbsp;`bio`: user's information (optional) <br>
+           &nbsp;&nbsp;`preference`: user's preferred gender <br>
+           &nbsp;&nbsp;`profile picture`: user's photo (optional) <br>
      * Response: <br>
-           `message`: succesful or unsuccesful registration <br>
+           &nbsp;&nbsp;`message`: succesful or unsuccesful registration <br>
 
   * `/api/user/login`
      * Method: POST <br>
      * Description: Logins user into the website <br>
      * Parameters: <br>
-           `username`: user's username <br>
-           `password`: user's password <br>
+           &nbsp;&nbsp;`username`: user's username <br>
+           &nbsp;&nbsp;`password`: user's password <br>
      * Response: <br>
-           `message`: welcomes user to website <br>
+           &nbsp;&nbsp;`message`: welcomes user to website <br>
 
   * `/api/user/updateUser/:userId`
      * Method: POST <br>
      * Description: Logins user into the website <br>
      * Parameters: <br>
-           `user_id`: user's id <br>
-           `fields`: desired fields to update with their
+           &nbsp;&nbsp;`user_id`: user's id <br>
+           &nbsp;&nbsp;`fields`: desired fields to update with their
            respective information <br>
      * Response: <br>
-           `message`: succesful or unsuccesful update <br>
+           &nbsp;&nbsp;`message`: succesful or unsuccesful update <br>
 
   * `/api/user/deleteUser/:userId`
      * Method: DELETE <br>
      * Description: Deletes user account <br>
      * Parameters: <br>
-           `user_id`: user's id <br>
-           `password`: user's password <br>
+           &nbsp;&nbsp;`user_id`: user's id <br>
+           &nbsp;&nbsp;`password`: user's password <br>
      * Response: <br>
-           `message`: successful or unsuccessful deletion <br>
+           &nbsp;&nbsp;`message`: successful or unsuccessful deletion <br>
 
   * `/api/getUser/:userId`
      * Method: GET <br>
      * Description: Gets users by username <br>
      * Parameters: <br>
-           `user_id`: current user's id <br>
-           `username`: requested user username <br>
+           &nbsp;&nbsp;`user_id`: current user's id <br>
+           &nbsp;&nbsp;`username`: requested user username <br>
      * Response:
-           `message`: user <br>
+           &nbsp;&nbsp;`message`: user <br>
 
   * `/api/match/newMatch`
      * Method: POST <br>
      * Description: Creates and checks if there is an
        existing match <br>
      * Parameters: <br>
-           `user_requester_id`: current user's id <br>
-           ``user_receiver_id``: matched user <br>
+           &nbsp;&nbsp;`user_requester_id`: current user's id <br>
+           &nbsp;&nbsp;`user_receiver_id`: matched user <br>
      * Response: <br>
-           `message`: successful or unsuccessful match creation <br>
+           &nbsp;&nbsp;`message`: successful or unsuccessful match creation <br>
 
    * `/api/match/deleteMatch`
      * Method: DELETE <br>
      * Description: Creates and checks if there is an
        existing match and deletes it <br>
      * Parameters: <br>
-           `userid_first`: user's id <br>
-           `userid_second`: user's id <br>
+           &nbsp;&nbsp;`userid_first`: user's id <br>
+           &nbsp;&nbsp;`userid_second`: user's id <br>
      * Response: <br>
-           `message`: successful or unsuccessful match deletion <br>
+           &nbsp;&nbsp;`message`: successful or unsuccessful match deletion <br>
 
   * `api/messages/getChat`
      * Method: GET <br>
      * Description: Gets complete conversation between two users <br>
      * Parameters: <br>
-         `sender_id`: sender id <br>
-         `receiver_id`: receiver id <br>
+         &nbsp;&nbsp;`sender_id`: sender id <br>
+         &nbsp;&nbsp;`receiver_id`: receiver id <br>
      * Response: <br>
-         `message`: chat between users <br>
+         &nbsp;&nbsp;`message`: chat between users <br>
