@@ -10,7 +10,7 @@ sign-up form, and a seamless online chatting platform.
 - [Getting Started](#getting-started)
 - [Installation](#installation)
 - [Configuration](#configuration)
-- [API Endpoints](#API)
+- [API Endpoints](#api-endpoints)
 
 ## Getting Started
 
@@ -53,7 +53,7 @@ To get started with the project follow these steps:
   change the dialect in the /database/config.sequelize.js file according to your 
   predefined dialect.
 
-  ## API
+  ## API Endpoints
 
  This dating app exposes the following API endpoints for interaction:
 
@@ -71,7 +71,7 @@ To get started with the project follow these steps:
            `bio`: user's information (optional) <br>
            `preference`: user's preferred gender <br>
            `profile picture`: user's photo (optional) <br>
-       * Response: <br>
+     * Response: <br>
            `message`: succesful or unsuccesful registration <br>
 
   * `/api/user/login`
@@ -80,7 +80,7 @@ To get started with the project follow these steps:
      * Parameters: <br>
            `username`: user's username <br>
            `password`: user's password <br>
-       * Response: <br>
+     * Response: <br>
            `message`: welcomes user to website <br>
 
   * `/api/user/updateUser/:userId`
@@ -90,7 +90,7 @@ To get started with the project follow these steps:
            `user_id`: user's id <br>
            `fields`: desired fields to update with their
            respective information <br>
-       * Response: <br>
+     * Response: <br>
            `message`: succesful or unsuccesful update <br>
 
   * `/api/user/deleteUser/:userId`
@@ -99,7 +99,7 @@ To get started with the project follow these steps:
      * Parameters: <br>
            `user_id`: user's id <br>
            `password`: user's password <br>
-       * Response: <br>
+     * Response: <br>
            `message`: successful or unsuccessful deletion <br>
 
   * `/api/getUser/:userId`
@@ -108,7 +108,7 @@ To get started with the project follow these steps:
      * Parameters: <br>
            `user_id`: current user's id <br>
            `username`: requested user username <br>
-       * Response:
+     * Response:
            `message`: user <br>
 
   * `/api/match/newMatch`
@@ -118,7 +118,7 @@ To get started with the project follow these steps:
      * Parameters: <br>
            `user_requester_id`: current user's id <br>
            ``user_receiver_id``: matched user <br>
-       * Response: <br>
+     * Response: <br>
            `message`: successful or unsuccessful match creation <br>
 
    * `/api/match/deleteMatch`
@@ -128,7 +128,7 @@ To get started with the project follow these steps:
      * Parameters: <br>
            `userid_first`: user's id <br>
            `userid_second`: user's id <br>
-       * Response: <br>
+     * Response: <br>
            `message`: successful or unsuccessful match deletion <br>
 
   * `api/messages/getChat`
