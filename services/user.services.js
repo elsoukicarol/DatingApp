@@ -1,6 +1,8 @@
 const { Sequelize, Op } = require('sequelize');
 const User = require("../models/user.table");
 
+const {compare, hash} = require('bcrypt');
+
 /// service to signUp
 const signUp = async(userData) => {
 
@@ -22,7 +24,18 @@ const signUp = async(userData) => {
                 return "Email already in use";
             }
         } else {
-            user = await User.create(userData);
+            user = await User.create({
+                username: userData.username,
+                first_name: userData.first_name,
+                last_name: userData.last_name,
+                email: userData.email,
+                password: await hash(userData.password, 10),
+                profile_picture: userData.profile_picture,
+                bio: userData.bio,
+                gender: userData.gender,
+                preference: userData.preference,
+                dob: userData.dob,
+            });
             return "User created succesfully";
         }
         
@@ -39,16 +52,22 @@ const signIn = async(userData) => {
         let user = await User.findOne({
             where: {
                 username: userData.username,
-                password: userData.password,
+                // password: userData.password,
                 }
             }
         );
-    
-        if(user){
-            return "Login succesfully";
-        }
-        else {
+
+        if(!user){
             return "Invalid username or password";
+        } else{
+            const isPasswordMatching = await compare(userData.password, user.password);
+
+            if(isPasswordMatching && user){
+                return "Login succesfully";
+            }
+            else {
+                return "Invalid username or password";
+            }
         }
         
     } catch (error) {
@@ -143,10 +162,14 @@ const getUserByUsername = async (userData) => {
 
     try {
 
-        /// gwtting requester id
-
+        /// getting requester id
         const userRequest = await User.findByPk(userData.userId);
 
+        if(!userRequest){
+            return "Invalid user requesting";
+        }
+
+        console.log(userData.username);
         if(userData.username === ""){
             const allUsers = await User.findAll({
                 attributes: ['first_name', 'last_name', 'username', 'gender', 'preference', 'profile_picture'],

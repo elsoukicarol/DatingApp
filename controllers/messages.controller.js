@@ -1,5 +1,4 @@
 const { createMessage, getConversation, createMessageAndEmit } = require("../services/messages.services");
-const { validationResult } = require("../validators/messages.validator");
 
 
 /// No need of using this api because i sending messages using sockets not API requests

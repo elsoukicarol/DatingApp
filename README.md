@@ -46,6 +46,8 @@ To get started with the project follow these steps:
 
     npm install body-parser
 
+    npm install bcrypt
+
   ## Configuration
 
   Change the configuration of the database in the .env file, this configuration 

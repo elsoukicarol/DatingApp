@@ -1,6 +1,5 @@
 const express = require("express");
 const { sendMessageController, getConversationController } = require("../controllers/messages.controller");
-const { createMessageValidator } = require("../validators/messages.validator");
 
 const router = express.Router();
 

@@ -130,7 +130,8 @@ const getUserByUsernameController = async (req, res) => {
 
         const user = await getUserByUsername({
             username: req.query.username,
-            userId: req.params.userId,
+            // requester userID
+            userId: req.query.userId,
         });
 
         return res.status(200).json({ message: user});
