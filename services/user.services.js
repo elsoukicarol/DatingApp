@@ -138,6 +138,8 @@ const getUserByUsername = async (userData) => {
 
     try {
 
+        /// gwtting requester id
+
         const userRequest = await User.findByPk(userData.userId);
 
         if(userData.username === ""){

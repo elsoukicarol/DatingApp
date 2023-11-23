@@ -38,6 +38,6 @@ app.listen(port, async () => {
 });
 
 app.use(bodyParser.json());
-app.use(routerUser);
-app.use(routerMatch);
-app.use(routerMessage);
+app.use('/api', routerUser);
+app.use('/api', routerMatch);
+app.use('/api', routerMessage);
