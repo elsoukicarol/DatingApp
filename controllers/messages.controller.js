@@ -1,6 +1,8 @@
 const { createMessage, getConversation, createMessageAndEmit } = require("../services/messages.services");
 const { validationResult } = require("../validators/messages.validator");
 
+
+/// No need of using this api because i sending messages using sockets not API requests
 const sendMessageController = async(req,res) => {
 
 
@@ -24,6 +26,7 @@ const sendMessageController = async(req,res) => {
     }
 }
 
+/// API used to get conversation between two users
 const getConversationController = async(req,res) => {
 
     try {

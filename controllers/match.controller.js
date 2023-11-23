@@ -1,7 +1,7 @@
 const { createMatch, deleteMatch } = require("../services/match.services");
 const { validationResult } = require("../validators/match.validator");
 
-
+//// API used to create a new match
 const newMatchController = async(req, res) => {
 
     const errors = validationResult(req);
@@ -23,6 +23,7 @@ const newMatchController = async(req, res) => {
 
 }
 
+//// API used to delete a match
 const deleteMatchController = async(req, res) => {
 
     const errors = validationResult(req);

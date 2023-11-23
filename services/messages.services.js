@@ -1,6 +1,7 @@
 const { Sequelize, Op } = require('sequelize');
 const Messages = require("../models/messages.table");
 
+/// method used in the client side to send a new message
 const createMessage = async(messageInfo) => {
 
     try {
@@ -12,6 +13,7 @@ const createMessage = async(messageInfo) => {
     }
 }
 
+/// service used to get full conversation between two users
 const getConversation = async(messageInfo) => {
 
     try {

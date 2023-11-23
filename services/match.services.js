@@ -1,6 +1,7 @@
 const { Sequelize, Op } = require('sequelize');
 const Match = require("../models/match.table");
 
+/// service that implements query to create match
 const createMatch = async(matchInfo) => {
 
     try {
@@ -31,6 +32,7 @@ const createMatch = async(matchInfo) => {
     }
 }
 
+/// method that checks if there is a match
 const checkIfMatched = async(matchInfo) => {
     try {
         
@@ -60,6 +62,7 @@ const checkIfMatched = async(matchInfo) => {
     }
 }
 
+/// query used to delete match
 const deleteMatch = async(matchInfo) => {
 
     try {

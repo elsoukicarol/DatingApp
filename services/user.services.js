@@ -1,6 +1,7 @@
 const { Sequelize, Op } = require('sequelize');
 const User = require("../models/user.table");
 
+/// service to signUp
 const signUp = async(userData) => {
 
     try {
@@ -30,6 +31,7 @@ const signUp = async(userData) => {
     }
 }
 
+/// service to sign In
 const signIn = async(userData) => {
 
     try {
@@ -54,6 +56,7 @@ const signIn = async(userData) => {
     }
 }
 
+/// service to update user info
 const updateUser = async (userData) => {
     try {
         let user = await User.findOne({
@@ -114,6 +117,7 @@ const updateUser = async (userData) => {
     }
 };
 
+/// service to delete user from database
 const deleteUser = async (userData) => {
     try {
         let user = await User.findOne({
@@ -134,6 +138,7 @@ const deleteUser = async (userData) => {
     }
 }
 
+/// service to get users
 const getUserByUsername = async (userData) => {
 
     try {
@@ -182,7 +187,6 @@ const getUserByUsername = async (userData) => {
     }
 
 }
-
 
 module.exports = {
     signUp,

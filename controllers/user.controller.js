@@ -1,6 +1,7 @@
 const { signUp, signIn, updateUser, deleteUser, getUserByUsername } = require("../services/user.services");
 const { validationResult } = require("../validators/user.validator");
 
+/// Controller used to creates new user
 const createNewUser = async(req, res) => {
 
     const errors = validationResult(req);
@@ -41,6 +42,7 @@ const createNewUser = async(req, res) => {
     }
 }
 
+/// Controller used to login into the wbesite
 const login = async(req, res) => {
 
     const errors = validationResult(req);
@@ -62,6 +64,7 @@ const login = async(req, res) => {
     }
 }
 
+/// controller used to update user information
 const updateUserController = async(req, res) =>{
 
     const errors = validationResult(req);
@@ -91,6 +94,7 @@ const updateUserController = async(req, res) =>{
     }
 }
 
+/// controller used to delete user from application
 const deleteUserController = async (req, res) => {
 
     const errors = validationResult(req);
@@ -119,6 +123,7 @@ const deleteUserController = async (req, res) => {
     }
 }
 
+/// controller used to get user by username and by preferences
 const getUserByUsernameController = async (req, res) => {
 
     try {

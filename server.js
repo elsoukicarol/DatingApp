@@ -20,14 +20,10 @@ io.on('connection', socket => {
         socket.broadcast.emit('user-connected', name);
     });
 
-    // socket.on('receiver-user', receiver => {
-    //     users[socket.id] = receiver;
-    // });
-
     socket.on('send-chat-message', async data => {
-
         socket.broadcast.emit('chat-message', { message: data.text, name: users[socket.id]});
-        console.log(data.receiver);
+
+        /// adding message to database
         const inserted = await createMessage({
             sender_id: users[socket.id],
             receiver_id: data.receiver,
@@ -35,13 +31,13 @@ io.on('connection', socket => {
             date: new Date(),
         });
 
-        console.log(inserted);
     });
 
     socket.on('disconnect', () => {
         socket.broadcast.emit('user-disconnected', users[socket.id]);
         delete users[socket.id];
     });
+    
 });
 
 server.listen(3001, 'localhost', () => {
